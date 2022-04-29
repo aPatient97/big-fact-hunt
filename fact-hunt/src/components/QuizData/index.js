@@ -9,6 +9,7 @@ const QuizData = () => {
     const [questions, setQuestions] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [score, setScore] = useState(0); 
+    const [showAnswers, setShowAnswers] = useState(false);
     
     useEffect(() => {
         fetch(APIurl)
@@ -23,11 +24,17 @@ const QuizData = () => {
       }, [])
 
       const handleAnswer = (answer) => {
-        if (answer === questions[currentIndex].correct_answer) {
-          setScore(score+1);
+        if (!showAnswers) {
+          if (answer === questions[currentIndex].correct_answer) {
+            setScore(score+1);
+          }
         }
-    
+        setShowAnswers(true);
+      }
+
+      const handleNextQuestion = () => {
         setCurrentIndex(currentIndex+1);
+        setShowAnswers(false);
       }
 
 
@@ -35,7 +42,7 @@ const QuizData = () => {
     <div className='container'>
       {currentIndex >= questions.length ? (
       <h1>Quiz Ended. Your score is {score}</h1>): 
-      <QuizMain handleAnswer={handleAnswer} data={questions[currentIndex]}/>}
+      <QuizMain handleAnswer={handleAnswer} showAnswers={showAnswers} handleNextQuestion={handleNextQuestion} data={questions[currentIndex]}/>}
     </div>
   ) : <div className='container'>Loading...</div>
     

@@ -7,7 +7,7 @@
     min-width: 400px;
     max-width: 900px;
     text-align: center;
-    color: rgb(245, 67, 156);
+    color: rgb(21, 181, 181);
 }
 
 .button-overall {
@@ -22,7 +22,7 @@
     height: 80px;
     padding: 8px;
     margin: 24px;
-    color: orange;
+    color: rgb(21, 181, 181);
     font-weight: bolder;
     font-size: larger;
     border-radius: 10px;
@@ -36,4 +36,29 @@
     transform: scale(1.1);
     transition: transform 300ms ease-in-out;
     cursor: pointer;
+}
+
+.green-button {
+    color: white;
+    background-color: rgb(31, 212, 31);
+}
+
+.red-button {
+    color: white;
+    background-color: rgb(236, 18, 76);
+}
+
+.next-question {
+    background-color: white;
+    width: 200px;
+    padding: 8px;
+    font-weight: bolder;
+    border-radius: 10px;
+    border: none;
+}
+
+.next-question:hover {
+    background-color: rgb(21, 181, 181);
+    color: white;
+    outline: none;
 }

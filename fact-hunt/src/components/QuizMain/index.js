@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const QuizMain = ({ handleAnswer, data: {question, correct_answer, answers}}) => {
+const QuizMain = ({ handleAnswer, showAnswers, handleNextQuestion, data: {question, correct_answer, answers}}) => {
   return (
     <>
         <div className='questionClass'>
@@ -10,11 +10,19 @@ const QuizMain = ({ handleAnswer, data: {question, correct_answer, answers}}) =>
 
         <div className='button-overall'>
             {answers.map((answer, idx) => {
+                const specialClassName = showAnswers ? (
+                    answer === correct_answer ? "green-button" : "red-button"
+                ) : "";
                 return(
-                    <button className='normal-button' onClick ={() => handleAnswer(answer)} dangerouslySetInnerHTML={{__html:answer}}></button>
+                    <button className={`normal-button ${specialClassName}`} onClick ={() => handleAnswer(answer)} dangerouslySetInnerHTML={{__html:answer}}></button>
                 )
             })}
+
+
         </div>
+        {showAnswers && (
+            <button onClick={handleNextQuestion} className="next-question">Next Question</button>
+        )}
 
     </>
   )
