@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 * {
     font-family: 'Poppins';
@@ -8,4 +9,24 @@ body {
     background-color: rgb(238, 174, 206);
 }
 
+
+
+
+
+/* :root {
+    --clr-neon: rgb(29, 176, 73);
+    --clr-bg: hsl(323 21% 16%);
+  }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--clr-bg);
+    font-family: 'Lora', serif;
+} */
 
