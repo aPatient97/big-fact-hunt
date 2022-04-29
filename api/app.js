@@ -11,4 +11,8 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Big Fact Hunt API!')
 });
 
+const userRoutes = require('./routes/usersRoutes');
+
+app.use('/users', userRoutes);
+
 module.exports = server;
