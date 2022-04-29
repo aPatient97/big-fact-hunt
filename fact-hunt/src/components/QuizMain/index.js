@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const QuizMain = ({ handleAnswer, showAnswers, handleNextQuestion, data: {question, correct_answer, answers}}) => {
+const QuizMain = ({ handleAnswer, showAnswers, handleNextQuestion, data: {question, correct_answer, answers }}) => {
   return (
     <>
         <div className='questionClass'>
@@ -17,9 +17,8 @@ const QuizMain = ({ handleAnswer, showAnswers, handleNextQuestion, data: {questi
                     <button className={`normal-button ${specialClassName}`} onClick ={() => handleAnswer(answer)} dangerouslySetInnerHTML={{__html:answer}}></button>
                 )
             })}
-
-
         </div>
+
         {showAnswers && (
             <button onClick={handleNextQuestion} className="next-question">Next Question</button>
         )}
