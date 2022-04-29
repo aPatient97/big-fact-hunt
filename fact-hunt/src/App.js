@@ -1,12 +1,12 @@
 import './App.css';
-import NeonButton from './components/NeonButton';
 
+import QuizData from './components/QuizData';
 
 function App() {
+
   return (
-    <>
-    </>
-  );
+    <QuizData />
+  )
 }
 
 export default App;
