@@ -1,12 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import QuizData from './components/QuizData';
+
+
+
 
 function App() {
+
   return (
-    <>
-      <h1>Hello all you fact hunts</h1>
-    </>
-  );
+    <QuizData />
+  )
 }
 
 export default App;
