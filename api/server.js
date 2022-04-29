@@ -25,7 +25,20 @@ io.on('connection', socket => {
     io.emit('admin-message', `There ${participantCount === 1 ? "is 1 fact hunter": `are ${participantCount} fact hunters`} here now!`);
 
     io.emit('client-number',participantCount);
-    socket.on("disconnect", socket => { // runs when client disconnects
+
+    socket.on("join-room", async data => {
+        Array.from(socket.rooms)
+            .filter((r) => r !== socket.id)
+            .forEach((r) => socket.leave(r));
+        await socket.join(data.roomName);
+        console.log(`${data.username} joined ${data.roomName}`);
+        console.log(socket.rooms);
+        socket.rooms.has(data.roomName) ? console.log('Successfully entered room!') : console.log('Not in room!');
+        // Tell everyone a user joined
+        io.to(data.roomName).emit("join-room", `${data.username} has joined the room!`);
+      });
+
+    socket.on("disconnect", () => { // runs when client disconnects
         console.log("Goodbye...");
     });
 });
