@@ -1,0 +1,30 @@
+.navbar {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    /* max-width: 600px; */
+    margin: 0 auto;
+    /* border-bottom: 1px solid lightblue; */
+    background-color: lightblue
+}
+
+.navbar h2 {
+    color: rgb(230, 15, 122);
+}
+
+.navbar .links {
+    margin-left: auto;
+}
+
+.navbar a {
+    margin-left: 16px;
+    text-decoration: none;
+    padding: 6px;
+    color: rgb(230, 15, 122)
+}
+
+.navbar a:hover {
+    color: rgb(112, 4, 58);
+    font-weight: 700;
+    font-size: large;
+}
