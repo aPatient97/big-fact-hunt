@@ -5,7 +5,7 @@ import './style.css';
 const Navbar = () => {
   return (
     <nav className='navbar'>
-        <h2>Big Fact Hunt</h2>
+        <h1>Big Fact Hunt</h1>
         <div className='links'>
             <Link to='/'>Home</Link>
             {/* will need to change this */}

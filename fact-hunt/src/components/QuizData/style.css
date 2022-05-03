@@ -4,6 +4,10 @@
     margin: 0px;
 } */
 
+body {
+    /* overflow: auto; */
+}
+
 .container {
     
     display: flex;
