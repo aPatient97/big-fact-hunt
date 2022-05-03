@@ -1,9 +1,10 @@
 import React from 'react'
+import QuizForm from '../../components/QuizForm';
 
 const Home = () => {
   return (
     <div>
-        <h1>Home Page</h1>
+        <QuizForm />
     </div>
   )
 }
