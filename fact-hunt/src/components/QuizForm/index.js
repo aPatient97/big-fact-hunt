@@ -65,13 +65,17 @@ const QuizForm = () => {
         <div>
             <h2>Choose your quiz settings</h2>
             <form onSubmit={handleSubmit}>
-                <div>Category:</div>
+                <label htmlFor='username'>Username: </label>
+                <input type="text" placeholder='Enter username' name='username'/>
+                <label htmlFor='room-name'>Room Name: </label>
+                <input type="text" placeholder='room name' name='room-name'/>
+                <label htmlFor='category'>Category: </label>
                 <select name="category" onChange={(e) => {setCategory(e.target.value)}}>
                 {/* <select name="categoryId"> */}
                     {allCategories}
                 </select>
 
-                <div>Difficulty Level:</div>
+                <label htmlFor='difficulty'>Difficulty Level: </label>
                 <select name="difficulty" onChange={(e) => {setDifficulty(e.target.value)}}>
                 {/* <select name="difficulty"> */}
                     <option value="easy">Easy</option>
