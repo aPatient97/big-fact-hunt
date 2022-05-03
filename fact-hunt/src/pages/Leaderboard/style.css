@@ -1,0 +1,29 @@
+#leaderboard-main {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+.leaderboard {
+    background-color: black;
+    padding: 10px 40px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#leaderboard-title {
+    text-align: center;
+}
+
+.leaderboard-info {
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: 900;
+    color: hotpink;
+}
+
+.leaderboard-item {
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+}
