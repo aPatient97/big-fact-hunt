@@ -1,9 +1,11 @@
-import React from 'react'
-import './style.css'
+import React from 'react';
+import './style.css';
+import { useNavigate } from 'react-router-dom';
 
 function JoinButton() {
+  const navigate = useNavigate();
   return (
-      <button className="neon-button">Join quiz</button>
+      <button onClick={() => navigate('/join')} className="neon-button">Join quiz</button>
   )
 }
 
