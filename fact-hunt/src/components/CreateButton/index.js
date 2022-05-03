@@ -1,9 +1,11 @@
 import React from 'react'
 import './style.css'
+import { useNavigate } from 'react-router-dom'; 
 
 function CreateButton() {
+  const navigate = useNavigate();
   return (
-      <button className="neon-button">Create quiz</button>
+      <button onClick={() => navigate('/create')} className="neon-button">Create quiz</button>
   )
 }
 
