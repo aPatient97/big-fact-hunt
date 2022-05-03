@@ -33,7 +33,7 @@
 }
 
 .navbar a:hover {
-    color: rgb(112, 4, 58);
+    color: var(--clr-neon);
     font-weight: 700;
     font-size: large;
 }

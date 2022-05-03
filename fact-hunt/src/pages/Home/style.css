@@ -31,6 +31,12 @@ button.neon-button {
         display: grid;
         grid-template-columns: 1fr;
     }
+
+    button.neon-button {
+        margin: 0.5em;
+        font-family: 'Poppins', sans-serif;
+        font-size: 2em;
+    }
 }
 
 /* @media only screen and (max-width: 1400px) {
