@@ -1,3 +1,9 @@
+:root {
+    --clr-neon: rgb(184, 206, 19);
+    --clr-bg: hsl(323 21% 16%);
+    --clr-neon: hsl(317 100% 54%);
+}
+
 .navbar {
     padding: 20px;
     display: flex;
@@ -5,11 +11,13 @@
     /* max-width: 600px; */
     margin: 0 auto;
     /* border-bottom: 1px solid lightblue; */
-    background-color: lightblue
+    background-color: var(--clr-bg);
+    
 }
 
 .navbar h2 {
     color: rgb(230, 15, 122);
+    color: var(--clr-neon)
 }
 
 .navbar .links {
@@ -20,7 +28,8 @@
     margin-left: 16px;
     text-decoration: none;
     padding: 6px;
-    color: rgb(230, 15, 122)
+    color: rgb(230, 15, 122);
+    color: var(--clr-neon);
 }
 
 .navbar a:hover {
