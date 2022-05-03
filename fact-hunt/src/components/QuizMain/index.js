@@ -3,7 +3,8 @@ import './style.css';
 
 const QuizMain = ({ handleAnswer, showAnswers, handleNextQuestion, data: {question, correct_answer, answers }}) => {
   return (
-    <>
+    <> 
+    <div id="quiz-container">
         <div className='questionClass'>
             <h1 dangerouslySetInnerHTML={{__html:question}}></h1>
         </div>
@@ -22,7 +23,7 @@ const QuizMain = ({ handleAnswer, showAnswers, handleNextQuestion, data: {questi
         {showAnswers && (
             <button onClick={handleNextQuestion} className="next-question">Next Question</button>
         )}
-
+    </div>
     </>
   )
 }
