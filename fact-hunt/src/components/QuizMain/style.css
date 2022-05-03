@@ -1,27 +1,39 @@
+html, * {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
 .questionClass {
     background-color: white;
     border-radius: 10px;
     border: 1px solid gray;
     padding: 16px;
-    margin: 10px auto;
-    min-width: 400px;
-    max-width: 900px;
+    /* margin: 10px auto; */
+    margin: 10em 1em 1em 1em;
+    /* min-width: 400px;
+    max-width: 900px; */
     text-align: center;
     color: rgb(21, 181, 181);
 }
 
 .button-overall {
-    column-count: 2;
-    padding: 20px 450px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* column-count: 2; 
+     padding: 20px 450px; */
 }
 
 .normal-button {
     /* add neon buttons to replace these*/
     background-color: white;
-    width: 380px;
+    padding: 2em;
+    margin: 1em;
+    
+    /* width: 380px;
     height: 80px;
     padding: 8px;
-    margin: 24px;
+    margin: 24px; */
     color: rgb(21, 181, 181);
     font-weight: bolder;
     font-size: larger;
@@ -30,6 +42,38 @@
     /* maybe add border */
     border: none;
     justify-content: center;
+}
+
+@media only screen and (max-width: 701px) {
+    .button-overall {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
+    .normal-button {
+        width: 20em;
+        margin: 0.4em; 
+        padding: 2em;
+    }
+    
+    .questionClass {
+        font-size: 0.8em;
+    }
+}
+
+
+@media only screen and (min-width: 700px) {
+    .normal-button {
+        padding: 2em;
+        width: 15em;
+    }
+}
+
+@media only screen and (min-width: 870px) {
+    .normal-button {
+        padding: 3em;
+        width: 20em;
+    }
 }
 
 .normal-button:hover {
