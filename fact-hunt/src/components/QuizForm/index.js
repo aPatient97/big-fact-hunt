@@ -3,6 +3,7 @@ import QuizData from '../QuizData';
 import { handleCategoryChange, handleDifficultyChange } from '../../redux/actions';
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import './style.css'
 
 const QuizForm = () => {
   const [categories, setCategories] = useState({});
@@ -62,7 +63,7 @@ const QuizForm = () => {
   
   return (
     <>
-        <div>
+        <div id="form-container">
             <h2>Choose your quiz settings</h2>
             <form onSubmit={handleSubmit}>
                 <label htmlFor='username'>Username: </label>
@@ -83,7 +84,7 @@ const QuizForm = () => {
                     <option value="hard">Hard</option>
                 </select>
 
-                <input type="submit"/>
+                <input type="submit" id="submit-btn"/>
             </form>
         </div>
     </>

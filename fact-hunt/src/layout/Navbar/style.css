@@ -15,12 +15,12 @@
     
 }
 
-.navbar h2 {
+.navbar h1 {
     color: rgb(230, 15, 122);
     color: var(--clr-neon)
 }
 
-.navbar h2:hover {
+.navbar h1:hover {
     color: rgb(230, 15, 122);
     color: var(--clr-neon);
     text-shadow:  0 0 0.125em hsl(0 0% 100% / 0.3),
