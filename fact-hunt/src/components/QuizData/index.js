@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import QuizMain from '../QuizMain';
 import './style.css';
+import { useSelector } from 'react-redux';
+import { handleCategoryChange, handleDifficultyChange } from '../../redux/actions';
 
-const APIurl = `https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple`;
+// const APIurl = `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`;
 
 const QuizData = () => {
-
+    const { type_category, type_difficulty } = useSelector((state) => state)
     const [questions, setQuestions] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [score, setScore] = useState(0); 
     const [showAnswers, setShowAnswers] = useState(false);
     
+    let APIurl = `https://opentdb.com/api.php?amount=10&category=${type_category}&difficulty=${type_difficulty}&type=multiple`
+    console.log(APIurl)
+    console.log(type_category)
+    console.log(type_difficulty)
+
     useEffect(() => {
         fetch(APIurl)
         .then(response => response.json())
@@ -20,7 +27,8 @@ const QuizData = () => {
             answers:[question.correct_answer, ...question.incorrect_answers].sort(() => Math.random() - 0.5)
           }))
           setQuestions(questions)
-        });
+
+        })
       }, [])
 
       const handleAnswer = (answer) => {
