@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
+html, * {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
 :root {
     /* --clr-neon: rgb(184, 206, 19); */
     /* --clr-neon: rgb(230, 15, 122); */
@@ -10,13 +16,14 @@
 body {
     background-color: var(--clr-bg);
     font-family: 'Poppins', sans-serif;
+    overflow: hidden;
 }
 
 
 button.neon-button {
     margin: 0.5em;
     font-family: 'Poppins', sans-serif;
-    /* font-size: 1em; */
+    font-size: 2.5em;
 }
 
 #buttons-container {
@@ -24,9 +31,10 @@ button.neon-button {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 900px) {
     #buttons-container {
         display: grid;
         grid-template-columns: 1fr;
