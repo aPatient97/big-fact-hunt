@@ -20,6 +20,14 @@
     color: var(--clr-neon)
 }
 
+.navbar h2:hover {
+    color: rgb(230, 15, 122);
+    color: var(--clr-neon);
+    text-shadow:  0 0 0.125em hsl(0 0% 100% / 0.3),
+      0 0 0.45em currentColor; 
+      
+}
+
 .navbar .links {
     margin-left: auto;
 }
@@ -36,4 +44,6 @@
     color: var(--clr-neon);
     font-weight: 700;
     font-size: large;
+    text-shadow:  0 0 0.125em hsl(0 0% 100% / 0.3),
+      0 0 0.45em currentColor; 
 }
