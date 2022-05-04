@@ -9,6 +9,7 @@
     padding: 10px 40px;
     border-radius: 5px;
     font-size: 20px;
+    
 }
 
 #leaderboard-title {
@@ -17,13 +18,22 @@
 
 .leaderboard-info {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     font-weight: 900;
     color: hotpink;
 }
 
 .leaderboard-item {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     color: white;
+}
+
+.leaderboard-item p {
+    text-align: left;
+}
+
+#leaderboard-grid {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(200px, 1fr))
 }

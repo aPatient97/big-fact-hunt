@@ -6,7 +6,7 @@ const QuizMain = ({ handleAnswer, showAnswers, handleNextQuestion, data: {questi
     <> 
     <div id="quiz-container">
         <div className='questionClass'>
-            <h1 dangerouslySetInnerHTML={{__html:question}}></h1>
+            <h2 dangerouslySetInnerHTML={{__html:question}}></h2>
         </div>
 
         <div className='button-overall'>
