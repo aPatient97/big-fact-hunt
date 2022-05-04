@@ -4,43 +4,44 @@ html, * {
     padding: 0px;
 }
 
+#quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+    height: 80vh;
+}
+
 .questionClass {
-    background-color: white;
+    background-color: #bc00dd;
+    /* background-color: #d100d1; */
     border-radius: 10px;
-    border: 1px solid gray;
+    border: 1px solid #bc00dd;
     padding: 16px;
-    /* margin: 10px auto; */
     margin: 10em 1em 1em 1em;
-    /* min-width: 400px;
-    max-width: 900px; */
     text-align: center;
-    color: rgb(21, 181, 181);
+    color: white;
 }
 
 .button-overall {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* column-count: 2; 
-     padding: 20px 450px; */
 }
 
 .normal-button {
-    /* add neon buttons to replace these*/
-    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    background-color: #d100d1;
+    background-color:#bc00dd;
     padding: 2em;
     margin: 1em;
-    
-    /* width: 380px;
-    height: 80px;
-    padding: 8px;
-    margin: 24px; */
-    color: rgb(21, 181, 181);
+    color: white;
     font-weight: bolder;
     font-size: larger;
     border-radius: 10px;
-    outline: none;
+    /* border-style: none; */
     /* maybe add border */
-    border: none;
+    border: 1px solid var(--clr-bg);
     justify-content: center;
 }
 
@@ -93,16 +94,21 @@ html, * {
 }
 
 .next-question {
-    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--clr-neon);
+    color: var(--clr-bg);
     width: 200px;
-    padding: 8px;
+    padding:  1em;
     font-weight: bolder;
     border-radius: 10px;
-    border: none;
+    border: solid 1px var(--clr-neon);
 }
 
 .next-question:hover {
-    background-color: rgb(21, 181, 181);
+    background-color: var(--clr-neon);
     color: white;
     outline: none;
+    text-shadow:  0 0 0.125em hsl(0 0% 100% / 0.3),
+      0 0 0.45em currentColor; 
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
 }
