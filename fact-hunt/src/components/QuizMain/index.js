@@ -19,11 +19,12 @@ const QuizMain = ({ handleAnswer, showAnswers, handleNextQuestion, data: {questi
                 )
             })}
         </div>
-
+        
         {showAnswers && (
             <button onClick={handleNextQuestion} className="next-question">Next Question</button>
         )}
     </div>
+            
     </>
   )
 }

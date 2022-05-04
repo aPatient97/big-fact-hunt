@@ -53,7 +53,7 @@ const QuizForm = () => {
         console.log(e.target.difficulty.value)
         dispatch(handleCategoryChange(e))
         dispatch(handleDifficultyChange(e))
-        navigate('/quiz')
+        navigate('/lobby')
     } catch (err) {
         console.warn(err)
     }
