@@ -21,13 +21,16 @@ const Leaderboard = () => {
                 <p>Username</p>
                 <p>Score</p>
             </div>
-            {leaderboardData && leaderboardData.map((data, i) => (
-                <div key={i} className='leaderboard-item'>
-                    <p>{i+1}</p>
-                    <p>{data.username}</p>
-                    <p>{data.score}</p>
-                </div>
-            ))}
+
+            <div id="leaderboard-grid">
+                {leaderboardData && leaderboardData.map((data, i) => (
+                        <div key={i}       className='leaderboard-item'>
+                            <p>{i+1}</p>
+                            <p>{data.username}</p>
+                            <p>{data.score}</p>
+                        </div>    
+                ))}
+            </div>
         </div>
     </div>
   )
