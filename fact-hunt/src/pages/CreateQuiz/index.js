@@ -2,10 +2,10 @@ import React from 'react';
 import QuizForm from '../../components/QuizForm';
 import './style.css';
 
-const CreateQuiz = () => {
+const CreateQuiz = ({socket}) => {
   return (
     <div>
-        <QuizForm />
+        <QuizForm socket={socket} />
     </div>
   )
 }
