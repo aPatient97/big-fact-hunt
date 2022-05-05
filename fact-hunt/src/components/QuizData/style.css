@@ -15,3 +15,39 @@
     align-items: center;
     flex-direction: column;
 }
+
+.question-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.timer {
+    text-align: center;
+    margin-right: 1em;
+}
+p.question {
+    margin-left: 1em;
+}
+
+p.score {
+    margin-right: 1em;
+}
+
+
+@media only screen and (min-width: 760px) { 
+    .timer {
+        text-align: center;
+        margin-right: 1em;
+    }
+    p.question {
+        margin-left: 5em;
+    }
+
+    p.score {
+        margin-right: 5em;
+    }
+}
+
+

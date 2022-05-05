@@ -46,6 +46,7 @@ const QuizData = () => {
     }, [count])
   
     useEffect(() => {
+      console.log('hello');
       if (currentIndex !== questions.length) {
         if (count === 3 && !showAnswers) {
           playTimer()
@@ -83,18 +84,22 @@ const QuizData = () => {
   return ( questions.length > 0 ? (
     <div className='container'>
       {currentIndex >= questions.length ? ( 
-      <>
-      <h1>Quiz Ended. Your score is {score}</h1>
-      <Leaderboard />
-      </>):
+        <>
+          <h1>Quiz Ended. Your score is {score}</h1>
+          <Leaderboard />
+        </>):
 
       <>
-      <div className='timer'>
-        {count}
-      </div>
-      <p>Question Number: {currentIndex}/{questions.length}</p>
-      <p>Score: {score}</p>
-      <QuizMain handleAnswer={handleAnswer} showAnswers={showAnswers} count={count} handleNextQuestion={handleNextQuestion} data={questions[currentIndex]}/></>}
+        <div className="question-info">
+            <p className='question'>Question: {currentIndex}/{questions.length}</p>
+            <div className='timer'>
+              {count}
+            </div>
+            <p className='score'>Score: {score}</p>
+        </div>
+          <QuizMain handleAnswer={handleAnswer} showAnswers={showAnswers} count={count} handleNextQuestion={handleNextQuestion} data={questions[currentIndex]}/>
+      </>
+      }
         
     </div>
   ) : <div className='container'>Loading...</div>
