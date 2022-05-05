@@ -32,7 +32,7 @@ const JoinQuiz = ({socket}) => {
             <input type="text" placeholder="Enter username" name="username"/>
             <label htmlFor='roomName'>Room name: </label>
             <input type='text' placeholder='room name' name='roomName'/>
-            <input type="submit" value="join game"/>
+            <input id='join-game-btn' type="submit" value="join game"/>
         </form>
         {!roomExists ?  <article className='no-join'>Room can't be joined!</article> : null}
     </div>
