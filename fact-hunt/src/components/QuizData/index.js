@@ -5,7 +5,10 @@ import { useSelector } from 'react-redux';
 import { handleCategoryChange, handleDifficultyChange } from '../../redux/actions';
 import Leaderboard from '../../pages/Leaderboard';
 
-// const APIurl = `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`;
+import useSound from 'use-sound';
+import countdown from '../../audioclips/countdown.wav';
+import correct from '../../audioclips/correct.wav';
+import incorrect from '../../audioclips/incorrect.wav';
 
 const QuizData = () => {
     const { type_category, type_difficulty } = useSelector((state) => state)
@@ -13,8 +16,12 @@ const QuizData = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [score, setScore] = useState(0); 
     const [showAnswers, setShowAnswers] = useState(false);
-    const [count, setCount] = useState(15)
-    
+    const [count, setCount] = useState(10)
+    const [playTimer] = useSound(countdown)
+    const [playCorrect] = useSound(correct)
+    const [playIncorrect] = useSound(incorrect) 
+
+   
     let APIurl = `https://opentdb.com/api.php?amount=10&category=${type_category}&difficulty=${type_difficulty}&type=multiple`
 
 
@@ -32,16 +39,29 @@ const QuizData = () => {
       }, [])
 
     useEffect(() => {
-      const timer =
+      if (!showAnswers){
+        const timer =
         count > 0 && setInterval(() => setCount(count - 1), 1000)
-      return () => clearInterval(timer)
+      return () => clearInterval(timer)}
     }, [count])
+  
+    useEffect(() => {
+      console.log('hello');
+      if (currentIndex !== questions.length) {
+        if (count === 3 && !showAnswers) {
+          playTimer()
+        }
+      }
+    })
 
       const handleAnswer = (answer) => {
         if (!showAnswers) {
           if (answer === questions[currentIndex].correct_answer) {
+            playCorrect();
             setScore((score+70) + (count*2));
-          } 
+          } else {
+            playIncorrect()
+          }
         }
         setShowAnswers(true);
       }
@@ -60,21 +80,27 @@ const QuizData = () => {
 
       timerFinish()
 
+
   return ( questions.length > 0 ? (
     <div className='container'>
-      {currentIndex >= questions.length ? (
-      <>
-      <h1>Quiz Ended. Your score is {score}</h1>
-      <Leaderboard />
-      </>):
+      {currentIndex >= questions.length ? ( 
+        <>
+          <h1>Quiz Ended. Your score is {score}</h1>
+          <Leaderboard />
+        </>):
 
       <>
-      <div className='timer'>
-        {count}
-      </div>
-      <p>Score: {score}</p>
-      <QuizMain handleAnswer={handleAnswer} showAnswers={showAnswers} count={count} handleNextQuestion={handleNextQuestion} data={questions[currentIndex]}/></>}
-
+        <div className="question-info">
+            <p className='question'>Question: {currentIndex}/{questions.length}</p>
+            <div className='timer'>
+              {count}
+            </div>
+            <p className='score'>Score: {score}</p>
+        </div>
+          <QuizMain handleAnswer={handleAnswer} showAnswers={showAnswers} count={count} handleNextQuestion={handleNextQuestion} data={questions[currentIndex]}/>
+      </>
+      }
+        
     </div>
   ) : <div className='container'>Loading...</div>
     

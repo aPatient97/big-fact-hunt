@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 function CreateButton() {
   const navigate = useNavigate();
   return (
-      <button onClick={() => navigate('/create')} className="neon-button">Create quiz</button>
+      <button onClick={() => navigate('/create')} className="neon-button">Create Quiz</button>
   )
 }
 
