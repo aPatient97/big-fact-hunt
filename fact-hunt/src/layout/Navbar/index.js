@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className='links'>
             <Link to='/'>Home</Link>
             {/* will need to change this */}
-            <Link to='/quiz'>New Quiz</Link>
+            <Link to='/quiz'>Quick Quiz</Link>
         </div>
     </nav>
   )
