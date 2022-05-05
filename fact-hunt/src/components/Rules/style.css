@@ -1,0 +1,16 @@
+.rules {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.rules-main {
+    margin: 1em;
+    text-align: center;
+}
+
+.rules h2 {
+    color: hotpink;
+    padding-bottom: 1em;
+}
