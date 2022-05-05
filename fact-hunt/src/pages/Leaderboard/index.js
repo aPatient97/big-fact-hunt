@@ -15,23 +15,25 @@ const Leaderboard = () => {
   return (
     <div id="leaderboard-main">
         <h2 id="leaderboard-title">Leaderboard</h2>
-        <div className='leaderboard'>
-            <div className='leaderboard-info leaderboard-heading'>
-                <p>Rank</p>
-                <p>Username</p>
-                <p>Score</p>
-            </div>
+        <table className='leaderboard'>
+            <thead className='leaderboard-info'>
+                <tr>
+                    <th id="rank-head">Rank</th>
+                    <th id="user-head">Username</th>
+                    <th id="score-head">Score</th>
+                </tr>
+            </thead>
 
-            <div id="leaderboard-grid">
+            <tbody>
                 {leaderboardData && leaderboardData.map((data, i) => (
-                        <div key={i}       className='leaderboard-item'>
-                            <p>{i+1}</p>
-                            <p>{data.username}</p>
-                            <p>{data.score}</p>
-                        </div>    
+                        <tr key={i} className='leaderboard-item'>
+                            <td className="rank">{i+1}</td>
+                            <td className="username">{data.username}</td>
+                            <td className="score">{data.score}</td>
+                        </tr>    
                 ))}
-            </div>
-        </div>
+           </tbody> 
+        </table>
     </div>
   )
 }
