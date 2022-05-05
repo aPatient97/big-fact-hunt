@@ -19,7 +19,6 @@ const JoinQuiz = ({socket}) => {
         setRoomExists(false)
       } else {
         setRoomExists(true);
-        console.log('checking');
         dispatch(handleData(data))
         navigate('/lobby')
       }
