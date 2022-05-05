@@ -46,9 +46,3 @@ button.neon-button {
     }
 }
 
-/* @media only screen and (max-width: 1400px) {
-    #buttons-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-} */

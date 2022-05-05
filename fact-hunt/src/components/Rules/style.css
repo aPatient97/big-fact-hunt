@@ -1,16 +1,33 @@
 .rules {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
 }
 
 .rules-main {
     margin: 1em;
-    text-align: center;
+    text-align: left;
 }
 
 .rules h2 {
     color: hotpink;
-    padding-bottom: 1em;
+    text-align: left;
+}
+
+.rules-main h3 {
+    margin-bottom: 0.6em;
+}
+
+#ready {
+    color: rgb(231, 80, 221);
+}
+
+li {
+    /* margin-left: 1em; */
+    list-style-type: none;
+}
+
+.rules-main p {
+    margin-bottom: 0.1em;
 }
