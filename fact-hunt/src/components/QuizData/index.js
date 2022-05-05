@@ -11,7 +11,7 @@ import correct from '../../audioclips/correct.wav';
 import incorrect from '../../audioclips/incorrect.wav';
 
 const QuizData = () => {
-    const { type_category, type_difficulty } = useSelector((state) => state)
+    const { type_category, type_difficulty, change_url } = useSelector((state) => state)
     const [questions, setQuestions] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [score, setScore] = useState(0); 
@@ -22,11 +22,11 @@ const QuizData = () => {
     const [playIncorrect] = useSound(incorrect) 
 
    
-    let APIurl = `https://opentdb.com/api.php?amount=10&category=${type_category}&difficulty=${type_difficulty}&type=multiple`
+    // let APIurl = `https://opentdb.com/api.php?amount=10&category=${type_category}&difficulty=${type_difficulty}&type=multiple`
 
 
     useEffect(() => {
-        fetch(APIurl)
+        fetch(change_url)
         .then(response => response.json())
         .then(data => {
           const questions = data.results.map((question) => ({
