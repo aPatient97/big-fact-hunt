@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { handleCategoryChange, handleDifficultyChange, handleQuizUrl, handleData} from '../../redux/actions';
+import { handleQuizUrl, handleData} from '../../redux/actions';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import './style.css'
@@ -44,8 +44,6 @@ const QuizForm = ({socket}) => {
       if (!exists){
         setRoomExists(false)
       } else {
-        dispatch(handleCategoryChange(e))
-        dispatch(handleDifficultyChange(e))
         dispatch(handleQuizUrl(url))
         dispatch(handleData(data))
         navigate('/lobby');

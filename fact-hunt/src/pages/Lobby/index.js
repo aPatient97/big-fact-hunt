@@ -26,7 +26,7 @@ const Lobby = ({socket}) => {
 
   useEffect(() => {
 
-    if(!change_url){
+    if(change_url === 'https://opentdb.com/api.php?amount=10&category=&difficulty=easy&type=multiple'){
       socket.on('room-url', url => {
         console.log(url);
         setQuizStart(true);
@@ -70,7 +70,7 @@ const Lobby = ({socket}) => {
       console.log(msg);
       setLogs(prevState => [...prevState, msg])
     });
-    if(change_url){
+    if(change_url !== 'https://opentdb.com/api.php?amount=10&category=&difficulty=easy&type=multiple'){
       socket.emit('room-url', change_url)
     } 
     setQuizStart(true);
