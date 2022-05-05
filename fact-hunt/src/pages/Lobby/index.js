@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import Rules from '../../components/Rules';
 
 const Lobby = () => {
 
@@ -16,6 +17,7 @@ const Lobby = () => {
         <div>
             <button onClick={() => navigate('/quiz')}>Start Quiz</button>
         </div>
+        <Rules />
     </>
   )
 }
