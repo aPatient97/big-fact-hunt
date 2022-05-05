@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import QuizMain from '../QuizMain';
 import './style.css';
 import { useSelector } from 'react-redux';
-import { handleCategoryChange, handleDifficultyChange } from '../../redux/actions';
 import Leaderboard from '../../pages/Leaderboard';
 
 import useSound from 'use-sound';
@@ -11,18 +10,15 @@ import correct from '../../audioclips/correct.wav';
 import incorrect from '../../audioclips/incorrect.wav';
 
 const QuizData = () => {
-    const { type_category, type_difficulty, change_url } = useSelector((state) => state)
+    const { change_url } = useSelector((state) => state)
     const [questions, setQuestions] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [score, setScore] = useState(0); 
     const [showAnswers, setShowAnswers] = useState(false);
-    const [count, setCount] = useState(10)
+    const [count, setCount] = useState(15)
     const [playTimer] = useSound(countdown)
     const [playCorrect] = useSound(correct)
     const [playIncorrect] = useSound(incorrect) 
-
-   
-    // let APIurl = `https://opentdb.com/api.php?amount=10&category=${type_category}&difficulty=${type_difficulty}&type=multiple`
 
 
     useEffect(() => {
