@@ -91,7 +91,7 @@ const QuizData = () => {
 
       <>
         <div className="question-info">
-            <p className='question'>Question: {currentIndex}/{questions.length}</p>
+            <p className='question'>Question: {currentIndex + 1}/{questions.length}</p>
             <div className='timer'>
               {count}
             </div>
