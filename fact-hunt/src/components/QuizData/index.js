@@ -8,14 +8,17 @@ import useSound from 'use-sound';
 import countdown from '../../audioclips/countdown.wav';
 import correct from '../../audioclips/correct.wav';
 import incorrect from '../../audioclips/incorrect.wav';
+import MultiplayerScores from '../../pages/MultiplayerScores';
 
-const QuizData = () => {
-    const { change_url } = useSelector((state) => state)
+const QuizData = ({socket}) => {
+    const { change_url, user_data } = useSelector((state) => state);
     const [questions, setQuestions] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [score, setScore] = useState(0); 
     const [showAnswers, setShowAnswers] = useState(false);
     const [count, setCount] = useState(15)
+    const [ end, setEnd ] = useState(false);
+    const [ scoreLog, setScoreLog ] = useState(['']);
     const [playTimer] = useSound(countdown)
     const [playCorrect] = useSound(correct)
     const [playIncorrect] = useSound(incorrect) 
@@ -50,6 +53,24 @@ const QuizData = () => {
       }
     })
 
+    // const handleScores = (score) => {
+    //   socket.emit('end-quiz', score);
+    //   socket.on('end-quiz', scoreData => {
+    //     let logMsg = `${scoreData.username} scored ${scoreData.score} points`;
+    //     setScoreLog(prevState => [...prevState, logMsg])
+    //   })
+    // };
+    
+    
+
+    // const renderFinalScores = () => {
+    //   return scoreLog.map((log) =>
+    //   <article>
+    //     {log}
+    //   </article>
+    //   )
+    // }
+
       const handleAnswer = (answer) => {
         if (!showAnswers) {
           if (answer === questions[currentIndex].correct_answer) {
@@ -68,20 +89,50 @@ const QuizData = () => {
         setCount(15)
       }
 
+      // const handleEnd = (score) => {
+      //   if(user_data){
+      //     socket.emit('end-quiz', score);
+      //     socket.on('end-quiz', scoreData => {
+      //     let logMsg = `${scoreData.username} scored ${scoreData.score} points`;
+      //     setScoreLog(prevState => [...prevState, logMsg])
+      //     })
+      //     return scoreLog.map((log) =>
+      //       <article>
+      //         {log}
+      //       </article>
+      //      )
+      //   }
+      // }
+      
+      // const handleMultiplayer = (score) => {
+      //   handleScores(score);
+
+      // }
+
       const timerFinish = () => {
         if (count === 0 && !showAnswers) {
             setShowAnswers(true)
           }
-        } 
+      } 
 
       timerFinish()
 
 
-  return ( questions.length > 0 ? (
+  return ( 
+    questions.length > 0 ? (
     <div className='container'>
       {currentIndex >= questions.length ? ( 
         <>
           <h1>Quiz Ended. Your score is {score}</h1>
+          {/* {socket.emit('end-quiz', score)} */}
+          < MultiplayerScores score={score} socket={socket}/>
+          {/* {user_data ? (
+            <>
+            <div>{renderFinalScores()}</div>
+            </>
+          ): null} */}
+          {/* {handleScores(score)}
+          <div>{renderFinalScores()}</div> */}
           <Leaderboard />
         </>):
 

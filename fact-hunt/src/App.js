@@ -13,6 +13,7 @@ import { useEffect } from 'react';
 
 const socket = io('https://lap-3-project.herokuapp.com/');
 // const socket = io('http://localhost:5001/'); // Used when running server on local host
+
 function App() {
   useEffect(() => {
     socket.on('admin-message', (msg) => {
@@ -29,7 +30,7 @@ function App() {
         <Route exact path="/create" element={<CreateQuiz socket={socket}/>}/>
         <Route exact path="/join" element={<JoinQuiz socket={socket}/>}/>
         <Route exact path="/lobby" element={<Lobby socket={socket}/>}/>
-        <Route exact path="/quiz" element={<QuizPage/>}/>
+        <Route exact path="/quiz" element={<QuizPage socket={socket}/>}/>
         <Route exact path="/leaderboard" element={<Leaderboard />}/>
         <Route path="*" element={<NotFound />}/>
       </Routes>
