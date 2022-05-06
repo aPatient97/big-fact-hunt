@@ -1,0 +1,51 @@
+#leaderboard-main {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.leaderboard {
+    background-color: black;
+    padding: 10px 40px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.leaderboard-info {
+    color: hotpink;
+}
+
+#leaderboard-title {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.rank, .username {
+    text-align: left;
+}
+
+.username {
+    text-align: left;
+    padding: 0em 1em;
+}
+
+.score {
+    text-align: left;
+    padding-left: 1em;
+}
+
+#score-head {
+    padding-left: 1em;
+}
+
+#user-head {
+    padding-left: 1em;
+    padding: 0em 1em;
+}
+
+#rank-head {
+    padding-right: 1em;
+}

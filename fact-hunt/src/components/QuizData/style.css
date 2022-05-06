@@ -1,0 +1,53 @@
+.timer {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 5px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.question-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.timer {
+    text-align: center;
+    margin-right: 1em;
+}
+p.question {
+    margin-left: 1em;
+}
+
+p.score {
+    margin-right: 1em;
+}
+
+
+@media only screen and (min-width: 760px) { 
+    .timer {
+        text-align: center;
+        margin-right: 1em;
+    }
+    p.question {
+        margin-left: 5em;
+    }
+
+    p.score {
+        margin-right: 5em;
+    }
+}
+
+
