@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { handleData } from '../../redux/actions';
+import './style.css'
 
 const JoinQuiz = ({socket}) => {
   const [roomExists, setRoomExists] = useState(true);
@@ -32,7 +33,7 @@ const JoinQuiz = ({socket}) => {
             <input type="text" placeholder="Enter username" name="username"/>
             <label htmlFor='roomName'>Room name: </label>
             <input type='text' placeholder='room name' name='roomName'/>
-            <input id='join-game-btn' type="submit" value="join game"/>
+            <button id='join-game-btn' type="submit">join game</button>
         </form>
         {!roomExists ?  <article className='no-join'>Room can't be joined!</article> : null}
     </div>

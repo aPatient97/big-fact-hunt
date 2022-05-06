@@ -2,7 +2,8 @@
     box-sizing: border-box;
 }
 
-#join-game-btn {
+ #join-game-btn {
+     font-family: 'Poppins', sans-serif;
     cursor: pointer;
     color: var(--clr-bg);
     background-color: var(--clr-neon);
