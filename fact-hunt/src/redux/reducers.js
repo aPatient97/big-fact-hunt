@@ -1,24 +1,24 @@
 import {
-    change_category,
-    change_difficulty,
+    change_url,
+    user_data
 } from './actionTypes';
 
 const initialState = { 
-    type_category: '',
-    type_difficulty: ''
+    change_url: 'https://opentdb.com/api.php?amount=10&category=&difficulty=easy&type=multiple',
+    user_data: {},
 };
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case change_category:
+        case change_url:
             return {
                 ...state,
-            type_category: action.payload,        
+                change_url: action.payload,
             }
-        case change_difficulty:
+        case user_data:
             return {
                 ...state,
-                type_difficulty: action.payload,
+                user_data: action.payload,
             }
         default:
             return state;

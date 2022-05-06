@@ -14,6 +14,10 @@
     margin-left: 1em;
 }
 
+#hide {
+    display: none;
+}
+
 #start-btn {
     font-family: 'Poppins', sans-serif;
     margin: 1em;

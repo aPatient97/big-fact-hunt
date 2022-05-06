@@ -1,25 +1,15 @@
-import React, { useEffect, useState, useRef } from 'react'
-import QuizData from '../QuizData';
-import { handleCategoryChange, handleDifficultyChange } from '../../redux/actions';
-import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { handleQuizUrl, handleData} from '../../redux/actions';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import './style.css'
 
-const QuizForm = () => {
+const QuizForm = ({socket}) => {
   const [categories, setCategories] = useState({});
-  const [url, setUrl] = useState();
-  const [category, setCategory] = useState();
-  const [difficulty, setDifficulty] = useState("easy");
-//   const difficultyRef = useRef();
-//   const categoryRef = useRef();
-  const dispatch = useDispatch()
-  let navigate =useNavigate()
-  
-//   const handleChange = (e) => {
-//       setCategory(e.target.value);
-//       dispatch(handleCategoryChange)
+  const [roomExists, setRoomExists] = useState(true);
 
-  
+  const dispatch = useDispatch();
+  let navigate = useNavigate();
 
   const fetchCategories = async () => {
       const resp = await fetch("https://opentdb.com/api_category.php");
@@ -43,20 +33,27 @@ const QuizForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-        // const category = e.target
-        // setDifficulty(difficultyRef.current.value)
-        // const gameUrl = `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`;
-        // setUrl(gameUrl)
-        console.log(e.target.value)
-        console.log(e.target.category.value)
-        console.log(e.target.difficulty.value)
-        dispatch(handleCategoryChange(e))
-        dispatch(handleDifficultyChange(e))
-        navigate('/lobby')
-    } catch (err) {
-        console.warn(err)
-    }
+
+    const url = `https://opentdb.com/api.php?amount=10&category=${e.target.category.value}&difficulty=${e.target.difficulty.value}&type=multiple`
+
+    const data = {roomName: e.target.roomName.value, username: e.target.username.value, creator: true, url:url };
+
+    socket.emit('join-room', data);
+
+    socket.on('room-exists', exists => {
+      if (!exists){
+        setRoomExists(false)
+      } else {
+        dispatch(handleQuizUrl(url))
+        dispatch(handleData(data))
+        navigate('/lobby');
+      }
+    })
+
+    console.log(e.target.category.value)
+    console.log(e.target.difficulty.value)
+    console.log(e.target.roomName.value)
+    console.log(e.target.username.value)
 
   }
   
@@ -68,17 +65,15 @@ const QuizForm = () => {
             <form onSubmit={handleSubmit}>
                 <label htmlFor='username'>Username: </label>
                 <input type="text" placeholder='Enter username' name='username'/>
-                <label htmlFor='room-name'>Room Name: </label>
-                <input type="text" placeholder='room name' name='room-name'/>
+                <label htmlFor='roomName'>Room Name: </label>
+                <input type="text" placeholder='room name' name='roomName'/>
                 <label htmlFor='category'>Category: </label>
-                <select name="category" onChange={(e) => {setCategory(e.target.value)}}>
-                {/* <select name="categoryId"> */}
+                <select name="category" >
                     {allCategories}
                 </select>
 
                 <label htmlFor='difficulty'>Difficulty Level: </label>
-                <select name="difficulty" onChange={(e) => {setDifficulty(e.target.value)}}>
-                {/* <select name="difficulty"> */}
+                <select name="difficulty" >
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
@@ -86,6 +81,9 @@ const QuizForm = () => {
 
                 <input type="submit" id="submit-btn"/>
             </form>
+
+            {!roomExists ?  <article id='no-join'>Room can't be created!</article> : null}
+
         </div>
     </>
   )

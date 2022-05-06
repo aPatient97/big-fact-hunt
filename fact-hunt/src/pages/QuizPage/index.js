@@ -1,9 +1,9 @@
 import React from 'react'
 import QuizData from '../../components/QuizData'
 
-const QuizPage = () => {
+const QuizPage = ({socket}) => {
   return (
-    <QuizData />
+    <QuizData socket={socket}/>
   )
 }
 
