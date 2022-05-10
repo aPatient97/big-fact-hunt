@@ -27,10 +27,12 @@ The aim of this group project was to create an online quiz application using Rea
 - JavaScript
 - HTML/CSS
 - Netlify
+- Socket.io Client
 
 ### Back-End
 - JavaScript
 - Node/Express
 - PostgreSQL
 - Heroku
+- Socket.io
 
