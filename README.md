@@ -1,5 +1,7 @@
 # The Big Fact Hunt - LAP 3 Project
 
+#### The deployed website can be found [here](https://big-fact-hunt.netlify.app)
+
 ### Contributors
 - [Alex Patient](https://github.com/apatient97)
 - [Ikenna Agada](https://github.com/ikenna98)
