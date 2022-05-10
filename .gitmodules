@@ -1,0 +1,3 @@
+[submodule "server"]
+	path = server
+	url = https://github.com/ikenna98/lap3-project-server
