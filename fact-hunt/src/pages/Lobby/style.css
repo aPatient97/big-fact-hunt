@@ -1,0 +1,180 @@
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+#lobby-h1 h1{
+    margin-left: 1em;
+}
+
+#hide {
+    display: none;
+}
+
+#start-btn {
+    font-family: 'Poppins', sans-serif;
+    margin: 1em;
+    width: 10em;
+    height: 4em;
+    border-radius:5px;
+    border: solid 1px var(--clr-bg);
+    background-color: #FF6EFF;
+    cursor: pointer;
+    border: #FF6EFF 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+    text-shadow:  0 0 0.125em hsl(0 0% 100% / 0.3),
+      0 0 0.45em currentColor; 
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+    position: relative;
+}
+
+#start-btn::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: var(--clr-neon);
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1.5em);
+    opacity: 0.7;
+}
+
+#start-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em var(--clr-neon);
+    opacity: 0;
+    background-color: #FF6EFF;
+    z-index: -1;
+    transition: opacity 100ms linear;
+}
+
+#start-btn:focus,
+#start-btn:hover {
+      color: white;
+      text-shadow: 0;
+}
+
+#start-btn:focus::before,
+#start-btn:hover::before {
+      opacity: 1;
+}
+
+#start-btn:focus::after,
+#start-btn:hover::after {
+      opacity: 1;
+}
+
+#chat-log-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#room-log, #room-chat {
+    padding: 1em;
+    margin: 1em;
+    border: solid 0.125em #FF6EFF;
+    width: 100%;
+    height: 30vh;
+}
+
+#chat-log-container h3 {
+    text-decoration: underline;
+}
+
+#chat-btn {
+    font-family: 'Poppins', sans-serif;
+    margin: 1em;
+    width: 10em;
+    height: 4em;
+    border-radius:5px;
+    border: solid 1px var(--clr-bg);
+    background-color: #FF6EFF;
+    cursor: pointer;
+    border: #FF6EFF 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+    text-shadow:  0 0 0.125em hsl(0 0% 100% / 0.3),
+      0 0 0.45em currentColor; 
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+    position: relative;
+}
+
+#chat-btn::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: var(--clr-neon);
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1.5em);
+    opacity: 0.7;
+}
+
+#chat-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em var(--clr-neon);
+    opacity: 0;
+    background-color: #FF6EFF;
+    z-index: -1;
+    transition: opacity 100ms linear;
+}
+
+#chat-btn:focus,
+#chat-btn:hover {
+      color: white;
+      text-shadow: 0;
+}
+
+#chat-btn:focus::before,
+#chat-btn:hover::before {
+      opacity: 1;
+}
+
+#chat-btn:focus::after,
+#chat-btn:hover::after {
+      opacity: 1;
+}
+
+label {
+    margin-bottom: 0em;
+}
+
+input#chat {
+    margin-bottom: 1em;
+    border-radius: 5px;
+    border-style: none;
+}
+
+input#chat:focus {
+    outline: none;
+}
+
+#chat-btn, #start-btn {
+    margin-top: 4em;
+}

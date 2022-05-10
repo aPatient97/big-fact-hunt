@@ -1,0 +1,130 @@
+html, * {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+#quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5em;
+    /* height: 80vh; */
+}
+
+.questionClass {
+    background-color: #bc00dd;
+    border-radius: 10px;
+    border: 1px solid #bc00dd;
+    padding: 16px;
+    margin: 1em;
+    color: white;
+    text-align: center;
+}
+
+.questionClass h2 {
+    padding-bottom: 0.5em;
+}
+
+.button-overall {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.normal-button {
+    font-family: 'Poppins', sans-serif;
+    background-color: #d100d1;
+    background-color:#bc00dd;
+    background-color: #db00b6;
+    padding: 2em;
+    margin: 1em;
+    color: var(--clr-bg);
+    font-weight: bolder;
+    font-size: larger;
+    border-radius: 10px;
+    /* border-style: none; */
+    /* maybe add border */
+    border: 1px solid #bc00dd;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 701px) {
+    div.button-overall {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    
+    .normal-button {
+        margin: 0.3em 1em;
+        font-size: 1.1em;
+        color: white;
+    }
+
+    div.questionClass h2 {
+        margin: 0em;
+        font-size: 1.25em;
+    }
+
+    .next-question {
+        margin-top: 0.5em;
+    }
+}
+
+
+@media only screen and (min-width: 700px) {
+    .normal-button {
+        padding: 2em;
+        width: 15em;
+    }
+}
+
+@media only screen and (min-width: 870px) {
+    .normal-button {
+        padding: 3em;
+        width: 20em;
+    }
+}
+
+.normal-button:hover {
+    /* transform: scale(1.1); */
+    color: white;
+    transition: transform 100ms ease-in-out;
+    cursor: pointer;
+    text-shadow:  0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em currentColor; 
+    box-shadow: inset 0 0 0.5em 0 #bc00dd, 0 0 0.5em 0 #bc00dd;
+}
+
+.green-button {
+    color: white;
+    background-color: rgb(31, 212, 31);
+    border: 1px solid currentColor;
+}
+
+.red-button {
+    color: white;
+    background-color: rgb(236, 18, 76);
+    border: 1px solid currentColor;
+}
+
+.next-question {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--clr-neon);
+    color: var(--clr-bg);
+    width: 200px;
+    padding:  1em;
+    font-weight: 600;
+    border-radius: 10px;
+    border: solid 1px var(--clr-neon);
+}
+
+.next-question:hover {
+    background-color: var(--clr-neon);
+    color: white;
+    outline: none;
+    text-shadow:  0 0 0.125em hsl(0 0% 100% / 0.3),
+      0 0 0.45em currentColor; 
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+}

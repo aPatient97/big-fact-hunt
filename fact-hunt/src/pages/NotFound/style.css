@@ -1,0 +1,18 @@
+.not-found {
+    text-align: center;
+}
+
+.not-found h2 {
+    color: rgb(12, 149, 194);
+    margin-bottom: 10px;
+    font-size: xx-large;
+}
+
+.not-found p {
+    margin-bottom: 10px;
+    font-size: large;
+}
+
+.not-found a {
+    color: black;
+}

@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+html, * {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    /* --clr-neon: rgb(184, 206, 19); */
+    /* --clr-neon: rgb(230, 15, 122); */
+    --clr-neon: hsl(317 100% 54%);
+    --clr-bg: hsl(323 21% 16%);
+}
+
+body {
+    background-color: var(--clr-bg);
+    font-family: 'Poppins', sans-serif;
+}
+
+button.neon-button {
+    margin: 0.5em;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+}
+
+#buttons-container {
+    margin-top: 6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: clip;
+    
+}
+
+@media only screen and (max-width: 900px) {
+    #buttons-container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    button.neon-button {
+        margin: 0.5em;
+        font-family: 'Poppins', sans-serif;
+        font-size: 2em;    
+    }
+}
+
